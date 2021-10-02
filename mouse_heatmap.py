@@ -4,7 +4,6 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.ndimage.filters import gaussian_filter as gf
-import json
 
 sleep = float(input("Seconds per sample (<0.1s is recommended): "))
 amount = int(input("Amount of samples: "))
@@ -14,14 +13,14 @@ recover = input("Would you like to recover replays? (Y/n): ")
 
 if f != "n":
     try:
-        file = open("mouse.re", "r")
+        file = open('mouse.re', "r")
         file_lines = file.readlines()
         file.close()
         file = open('mouse.re', "x")
         file.close()
         file = open('mouse.re', "r+")
     except FileExistsError:
-        file = open("mouse.re", "r")
+        file = open('mouse.re', "r")
         file_lines = file.readlines()
         file = open('mouse.re', "r+")    
 
@@ -72,3 +71,4 @@ values = gf(values, sigma=10)
 fig, ax = plt.subplots()
 im = ax.imshow(values)
 plt.show()
+file.close()
