@@ -10,3 +10,5 @@ You can show your already existing heatmap using:
 `python3 heatmap_show.py`
 
 `fake_mouse.py` functions like the `pyautogui` module, except every action does not control your mouse, it instead just changes the numbers of a variable.
+
+To remove all past recordings, just delete the `mouse.re` file.
