@@ -13,10 +13,10 @@ recover = input("Would you like to recover replays? (Y/n): ")
 
 if f != "n":
     try:
+        file = open('mouse.re', "x")
+        file.close()
         file = open('mouse.re', "r")
         file_lines = file.readlines()
-        file.close()
-        file = open('mouse.re', "x")
         file.close()
         file = open('mouse.re', "r+")
     except FileExistsError:
